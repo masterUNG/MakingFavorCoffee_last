@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
         <!--Logo-->
         <ImageView
-            android:src="@drawable/logocoffee2"
+            android:src="@drawable/logocoffee3"
             android:layout_width="@dimen/logo"
             android:layout_height="@dimen/logo" />
 
