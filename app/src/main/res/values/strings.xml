@@ -13,4 +13,7 @@
     <string name="title_passFalse">Password False</string>
     <string name="message_passFalse">Please Try again Password False</string>
 
+    <string name="open">Open Menu</string>
+    <string name="close">Close Menu</string>
+
 </resources>
