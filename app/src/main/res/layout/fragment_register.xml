@@ -162,7 +162,7 @@
                     android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="pass :"
+                    android:hint="Password :"
                     android:inputType="text"
                     android:textColor="@color/colorPrimaryDark"
                     android:textColorHint="@color/colorPrimary" />
