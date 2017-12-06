@@ -34,9 +34,9 @@
             android:layout_height="wrap_content">
             <!--Icon-->
             <ImageView
-                android:src="@mipmap/ic_user"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_user" />
 
             <!--User-->
             <EditText
@@ -59,9 +59,9 @@
             android:layout_height="wrap_content">
             <!--Icon-->
             <ImageView
-                android:src="@mipmap/ic_password"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_pass" />
 
             <!--Password-->
             <EditText
