@@ -30,13 +30,11 @@
 
 
 
-
-
-
     </LinearLayout>
-    <!--Drawer Menu-->
 
+    <!--Drawer Menu-->
     <LinearLayout
+        android:padding="@dimen/padding"
         android:layout_gravity="start"
         android:orientation="vertical"
         android:background="#ffffff"
@@ -44,12 +42,133 @@
         android:layout_height="match_parent">
 
         <!--Content Menu-->
-        <TextView
-            android:textStyle="bold"
-            android:textSize="@dimen/h1"
-            android:text="My Menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
+        <!--Mocha-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/moccha"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtMocha"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="@string/mocha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Espresso-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/espresso"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtEspresso"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="@string/espresso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Latte-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/latte"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtLatte"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="@string/latte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Cappucchino-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/cuppuchino"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtCappucchino"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="@string/cappucchino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Americano-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/americano"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtAmericano"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="@string/americano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

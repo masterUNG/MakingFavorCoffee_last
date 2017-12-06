@@ -8,26 +8,66 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
-public class CoffeeActivity extends AppCompatActivity {
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.AmericanoFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.CappucchinoFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.EspressoFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.LatteFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.MochaFragment;
+
+public class CoffeeActivity extends AppCompatActivity implements View.OnClickListener {
 
     //    Explicit
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private String[] loginStrings;
+    private TextView mochaTextView, espressoTextView, latteTextView, cappucchinoTextView, americanoTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
 
+//        Initial View And Setcontroler
+        InitialControler();
+
+
         //Create Toolbar
         createToolbar();
 
+//        Add Fragment to Activity
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentFragmentCoffee, MochaFragment.mochaInstance(loginStrings))
+                    .commit();
+        }
 
 
     } // Main Method
+
+    private void InitialControler() {
+
+//        Initial
+
+        mochaTextView = (TextView) findViewById(R.id.txtMocha);
+        espressoTextView = (TextView) findViewById(R.id.txtEspresso);
+        latteTextView = (TextView) findViewById(R.id.txtLatte);
+        cappucchinoTextView = (TextView) findViewById(R.id.txtCappucchino);
+        americanoTextView = (TextView) findViewById(R.id.txtAmericano);
+
+        //    Controler
+
+        mochaTextView.setOnClickListener(CoffeeActivity.this);
+        espressoTextView.setOnClickListener(CoffeeActivity.this);
+        latteTextView.setOnClickListener(CoffeeActivity.this);
+        cappucchinoTextView.setOnClickListener(CoffeeActivity.this);
+        americanoTextView.setOnClickListener(CoffeeActivity.this);
+
+    }
+
 
     private void createToolbar() {
         loginStrings = getIntent().getStringArrayExtra("Login");
@@ -70,4 +110,44 @@ public class CoffeeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.txtMocha:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, MochaFragment.mochaInstance(loginStrings))
+                        .commit();
+                break;
+            case R.id.txtEspresso:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, EspressoFragment.espressoInstance(loginStrings))
+                        .commit();
+                break;
+            case R.id.txtLatte:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, LatteFragment.latteInstance(loginStrings))
+                        .commit();
+                break;
+            case R.id.txtCappucchino:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, CappucchinoFragment.cappucchinoInstance(loginStrings))
+                        .commit();
+                break;
+            case R.id.txtAmericano:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, AmericanoFragment.americanoInstance(loginStrings))
+                        .commit();
+                break;
+
+
+        }//switch
+
+        drawerLayout.closeDrawers();
+
+    }//onClick
 } // Main Class

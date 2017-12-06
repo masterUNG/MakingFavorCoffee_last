@@ -16,4 +16,19 @@
     <string name="open">Open Menu</string>
     <string name="close">Close Menu</string>
 
+    <string name="mocha">Mocha</string>
+    <string name="espresso">Espresso</string>
+    <string name="latte">Latte</string>
+    <string name="cappucchino">Cappucchino</string>
+    <string name="americano">Americano</string>
+
+    <string name="espresso_choose">Espresso</string>
+    <string name="cocoapowder">Cocoapowder</string>
+    <string name="milk">Milk</string>
+    <string name="frappe_powder">Frappe powder</string>
+
+    <string name="shot">Shot</string>
+    <string name="teaspoons">Teaspoons</string>
+    <string name="oz">Oz.</string>
+
 </resources>
