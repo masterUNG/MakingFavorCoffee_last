@@ -14,6 +14,7 @@ import android.widget.TextView;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.AmericanoFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.CappucchinoFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.EspressoFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.fragment.HomeScoreFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.LatteFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.MochaFragment;
 
@@ -24,7 +25,9 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
     private Toolbar toolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private String[] loginStrings;
-    private TextView mochaTextView, espressoTextView, latteTextView, cappucchinoTextView, americanoTextView;
+    private TextView mochaTextView, espressoTextView,
+            latteTextView, cappucchinoTextView,
+            americanoTextView, homeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +44,7 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
 //        Add Fragment to Activity
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentFragmentCoffee, MochaFragment.mochaInstance(loginStrings))
+                    .add(R.id.contentFragmentCoffee, HomeScoreFragment.homeScoreInstance(loginStrings))
                     .commit();
         }
 
@@ -51,7 +54,7 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
     private void InitialControler() {
 
 //        Initial
-
+        homeTextView = findViewById(R.id.txtHome);
         mochaTextView = (TextView) findViewById(R.id.txtMocha);
         espressoTextView = (TextView) findViewById(R.id.txtEspresso);
         latteTextView = (TextView) findViewById(R.id.txtLatte);
@@ -60,6 +63,7 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
 
         //    Controler
 
+        homeTextView.setOnClickListener(CoffeeActivity.this);
         mochaTextView.setOnClickListener(CoffeeActivity.this);
         espressoTextView.setOnClickListener(CoffeeActivity.this);
         latteTextView.setOnClickListener(CoffeeActivity.this);
@@ -114,6 +118,15 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
+            case R.id.txtHome:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, HomeScoreFragment.homeScoreInstance(loginStrings))
+                        .commit();
+                break;
+
+
             case R.id.txtMocha:
 
                 getSupportFragmentManager().beginTransaction()

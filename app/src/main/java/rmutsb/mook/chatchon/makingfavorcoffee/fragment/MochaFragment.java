@@ -86,7 +86,7 @@ public class MochaFragment extends Fragment{
     //@SuppressLint("NewApi")
     private void espresspSeekbar() {
         //espressoSeekBar.setMin(1);
-        espressoSeekBar.setMax(5);
+        espressoSeekBar.setMax(20);
         espressoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

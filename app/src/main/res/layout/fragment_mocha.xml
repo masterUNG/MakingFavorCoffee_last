@@ -1,241 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <!--Content-->
     <LinearLayout
-        android:layout_above="@+id/btnoder"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnoder"
+        android:orientation="vertical">
 
         <!--Name-->
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textStyle="bold"
             android:text="Mocha"
             android:textSize="@dimen/h1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textStyle="bold" />
         <!--Image-->
         <ImageView
-            android:src="@drawable/moccha_show"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/moccha_show" />
         <!--Choose Type-->
         <RadioGroup
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radfrappuccino"
-                android:layout_weight="1"
-                android:text="Frappuccino"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Frappuccino" />
 
 
             <RadioButton
                 android:id="@+id/radcolddrink"
-                android:layout_weight="1"
-                android:text="Cold Drink"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cold Drink" />
 
 
             <RadioButton
                 android:id="@+id/radhotdrink"
-                android:layout_weight="1"
-                android:text="Hot Drink"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hot Drink" />
 
 
         </RadioGroup>
         <!--Ingredient-->
         <TextView
-            android:layout_marginLeft="@dimen/margin"
-            android:textStyle="bold"
-            android:textSize="@dimen/h2"
-            android:text="Ingredient"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:text="Ingredient"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <!--Espresso-->
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding">
 
-                    <LinearLayout
-                        android:padding="@dimen/padding"
-                        android:orientation="horizontal"
+                    <!--Name-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/espresso_choose"
+                        android:textSize="@dimen/h2" />
+
+                    <!--Unit-->
+                    <TextView
+                        android:id="@+id/txtUnitEspreeso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="right"
+                        android:text="@string/shot"
+                        android:textSize="@dimen/h3" />
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <!--Name-->
+                        <!--Start-->
                         <TextView
-                            android:layout_weight="1"
-                            android:text="@string/espresso_choose"
+                            android:id="@+id/txtStartCoffee"
                             android:textSize="@dimen/h2"
-                            android:layout_width="0dp"
+                            android:text="10g"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
                         <!--SeekBar-->
                         <SeekBar
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/txtStartCoffee"
+                            android:layout_toLeftOf="@+id/txtEndCoffee"
                             android:id="@+id/seekbarEspreeso"
-                            android:layout_weight="2"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
-
-                        <!--Unit-->
+                        <!--End-->
                         <TextView
-                            android:id="@+id/txtUnitEspreeso"
-                            android:gravity="right"
-                            android:layout_weight="1"
-                            android:text="@string/shot"
-                            android:textSize="@dimen/h3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:padding="@dimen/padding"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <!--Name-->
-                        <TextView
-                            android:layout_weight="1"
-                            android:text="@string/cocoapowder"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/txtEndCoffee"
                             android:textSize="@dimen/h2"
-                            android:layout_width="0dp"
+                            android:text="20g"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <!--SeekBar-->
-                        <SeekBar
-                            android:id="@+id/seekCoco"
-                            android:layout_weight="2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
 
 
-                        <!--Unit-->
-                        <TextView
-                            android:id="@+id/txtUnitCoco"
-                            android:gravity="right"
-                            android:layout_weight="1"
-                            android:text="@string/teaspoons"
-                            android:textSize="@dimen/h3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/nMilk"
-                        android:padding="@dimen/padding"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <!--Name-->
-                        <TextView
-
-                            android:layout_weight="1"
-                            android:text="@string/milk"
-                            android:textSize="@dimen/h2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                        <!--SeekBar-->
-                        <SeekBar
-                            android:id="@+id/seekBarMilk"
-                            android:layout_weight="2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <!--Unit-->
-                        <TextView
-                            android:id="@+id/txtUnitMilk"
-                            android:gravity="right"
-                            android:layout_weight="1"
-                            android:text="@string/teaspoons"
-                            android:textSize="@dimen/h3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linFrapp"
-                        android:padding="@dimen/padding"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <!--Name-->
-                        <TextView
-                            android:layout_weight="1"
-                            android:text="@string/frappe_powder"
-                            android:textSize="@dimen/h2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                        <!--SeekBar-->
-                        <SeekBar
-                            android:id="@+id/seekbarFrappe"
-                            android:layout_weight="2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <!--Unit-->
-                        <TextView
-                            android:id="@+id/txtUnitFrappe"
-                            android:gravity="right"
-                            android:layout_weight="1"
-                            android:text="@string/teaspoons"
-                            android:textSize="@dimen/h3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
-            </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding">
+
+                    <!--Name-->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cocoapowder"
+                        android:textSize="@dimen/h2" />
+
+                    <!--SeekBar-->
+                    <SeekBar
+                        android:id="@+id/seekCoco"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+
+                    <!--Unit-->
+                    <TextView
+                        android:id="@+id/txtUnitCoco"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/teaspoons"
+                        android:textSize="@dimen/h3" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nMilk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding">
+
+                    <!--Name-->
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/milk"
+                        android:textSize="@dimen/h2" />
+
+                    <!--SeekBar-->
+                    <SeekBar
+                        android:id="@+id/seekBarMilk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+
+                    <!--Unit-->
+                    <TextView
+                        android:id="@+id/txtUnitMilk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/teaspoons"
+                        android:textSize="@dimen/h3" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linFrapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding">
+
+                    <!--Name-->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/frappe_powder"
+                        android:textSize="@dimen/h2" />
+
+                    <!--SeekBar-->
+                    <SeekBar
+                        android:id="@+id/seekbarFrappe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+
+                    <!--Unit-->
+                    <TextView
+                        android:id="@+id/txtUnitFrappe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/teaspoons"
+                        android:textSize="@dimen/h3" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
 
     </LinearLayout>
 
 
     <!--Food Bar-->
-<Button
-    android:id="@+id/btnoder"
-    android:textColor="#ffffff"
-    android:text="Oder"
-    android:layout_alignParentBottom="true"
-    android:background="@color/colorPrimary"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-
-
+    <Button
+        android:id="@+id/btnoder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Oder"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>

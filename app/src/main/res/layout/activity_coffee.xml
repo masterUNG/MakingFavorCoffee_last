@@ -42,6 +42,30 @@
         android:layout_height="match_parent">
 
         <!--Content Menu-->
+        <!--Home-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/moccha"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--Name-->
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtHome"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:text="Home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <!--Mocha-->
         <LinearLayout
