@@ -85,11 +85,15 @@ public class MochaFragment extends Fragment{
 
     //@SuppressLint("NewApi")
     private void espresspSeekbar() {
-        //espressoSeekBar.setMin(1);
+        //espressoSeekBar.setMin(10);
         espressoSeekBar.setMax(20);
         espressoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                if (progress <= 10) {
+                    progress = 10;
+                }
 
                 unitEspressoTextView.setText(Integer.toString(progress)+ " " + getString(R.string.shot));
 
@@ -172,7 +176,7 @@ public class MochaFragment extends Fragment{
 
     private void coldDefaule() {
         coldDrinnkRadioButton.setChecked(true);
-        unitEspressoTextView.setText("1" + getString(R.string.shot));
+        unitEspressoTextView.setText("10" + getString(R.string.shot));
         unitCocoTextView.setText("1" + getString(R.string.teaspoons));
         unitMilkTextView.setText("1" + getString(R.string.teaspoons));
         unitFrappeTextView.setText("1" + getString(R.string.teaspoons));

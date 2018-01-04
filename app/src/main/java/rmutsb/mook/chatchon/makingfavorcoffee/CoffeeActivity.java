@@ -17,6 +17,7 @@ import rmutsb.mook.chatchon.makingfavorcoffee.fragment.EspressoFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.HomeScoreFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.LatteFragment;
 import rmutsb.mook.chatchon.makingfavorcoffee.fragment.MochaFragment;
+import rmutsb.mook.chatchon.makingfavorcoffee.ultility.MyManager;
 
 public class CoffeeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,11 +29,23 @@ public class CoffeeActivity extends AppCompatActivity implements View.OnClickLis
     private TextView mochaTextView, espressoTextView,
             latteTextView, cappucchinoTextView,
             americanoTextView, homeTextView;
+    private MyManager myManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
+
+        myManager = new MyManager(CoffeeActivity.this);
+
+//        Test Add
+//        myManager.addValueToSQLite("Test2", "Test3",
+//                "Test4", "Test5", "Test6",
+//                "Test7", "Test8", "Test9");
+
+
 
 //        Initial View And Setcontroler
         InitialControler();
