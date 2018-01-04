@@ -83,9 +83,9 @@ public class MochaFragment extends Fragment{
     }//Main method
 
 
-    @SuppressLint("NewApi")
+    //@SuppressLint("NewApi")
     private void espresspSeekbar() {
-        espressoSeekBar.setMin(1);
+        //espressoSeekBar.setMin(1);
         espressoSeekBar.setMax(5);
         espressoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -145,9 +145,9 @@ public class MochaFragment extends Fragment{
         });
     }
 
-    @SuppressLint("NewApi")
+    //@SuppressLint("NewApi")
     private void cocoSeekbar() {
-        cocoSeekBar.setMin(1);
+        //cocoSeekBar.setMin(1);
         cocoSeekBar.setMax(5);
         cocoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

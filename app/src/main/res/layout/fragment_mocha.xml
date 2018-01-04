@@ -5,7 +5,7 @@
 
     <!--Content-->
     <LinearLayout
-    android:layout_above="@+id/btnoder"
+        android:layout_above="@+id/btnoder"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,6 +14,7 @@
         <TextView
             android:layout_gravity="center_horizontal"
             android:textStyle="bold"
+            android:text="Mocha"
             android:textSize="@dimen/h1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -175,7 +176,7 @@
                             android:gravity="right"
                             android:layout_weight="1"
                             android:text="@string/teaspoons"
-                            android:textSize="@dimen/h2"
+                            android:textSize="@dimen/h3"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
 
@@ -210,7 +211,7 @@
                             android:gravity="right"
                             android:layout_weight="1"
                             android:text="@string/teaspoons"
-                            android:textSize="@dimen/h2"
+                            android:textSize="@dimen/h3"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
 
