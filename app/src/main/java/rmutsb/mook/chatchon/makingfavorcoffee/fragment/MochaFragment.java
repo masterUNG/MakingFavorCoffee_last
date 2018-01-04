@@ -8,18 +8,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import rmutsb.mook.chatchon.makingfavorcoffee.R;
+import rmutsb.mook.chatchon.makingfavorcoffee.ultility.MyManager;
 
 /**
  * Created by Acer on 6/12/2560.
  */
 
-public class MochaFragment extends Fragment{
+public class MochaFragment extends Fragment {
 
     //    Explicit
     private String[] loginString;
@@ -27,10 +29,13 @@ public class MochaFragment extends Fragment{
     private LinearLayout milkLinearLayout, frappePowderLinearLayout;
     private SeekBar espressoSeekBar, cocoSeekBar, milkSeekBar, frappeSeekBar;
     private TextView unitEspressoTextView, unitCocoTextView, unitMilkTextView, unitFrappeTextView;
+    private String tag = "4JanV1";
+    private String typeCoffeeString = "Cold Drink";
+    private String espressoString = "10g", cocoString = "0.5g",
+            milkString = "123g", frappeString = "456g";
 
 
-
-    public static MochaFragment mochaInstance(String[] loginString){
+    public static MochaFragment mochaInstance(String[] loginString) {
 
         MochaFragment mochaFragment = new MochaFragment();
         Bundle bundle = new Bundle();
@@ -38,7 +43,7 @@ public class MochaFragment extends Fragment{
         mochaFragment.setArguments(bundle);
 
 
-        return mochaFragment ;
+        return mochaFragment;
     }
 
     @Override
@@ -53,8 +58,6 @@ public class MochaFragment extends Fragment{
 
 //        Cold Defaule
         coldDefaule();
-
-
 
 
         //frappuccino Controller
@@ -79,8 +82,42 @@ public class MochaFragment extends Fragment{
         //Frappe seekbar
         frappeSeekbar();
 
+//        Order Controller
+        orderController();
 
-    }//Main method
+
+    } //Main method
+
+    private void orderController() {
+
+        Button button = getView().findViewById(R.id.btnOrder);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.d(tag, "idLogin " + loginString[0]);
+                Log.d(tag, "NameCoffee" + "Mocha");
+                Log.d(tag, "TypeCoffee" + typeCoffeeString);
+                Log.d(tag, "Espresso" + espressoString);
+                Log.d(tag, "Cocoapowder" + cocoString);
+                Log.d(tag, "Milk" + milkString);
+                Log.d(tag, "FrappePowder" + frappeString);
+                Log.d(tag, "Item" + "1");
+
+                MyManager myManager = new MyManager(getActivity());
+                myManager.addValueToSQLite(loginString[0], "Mocha",
+                        typeCoffeeString, espressoString, cocoString, milkString, frappeString, "1");
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentFragmentCoffee, new ShowOrderFragment())
+                        .addToBackStack(null)
+                        .commit();
+
+            }   // onClick
+        });
+
+    }
 
 
     //@SuppressLint("NewApi")
@@ -95,7 +132,8 @@ public class MochaFragment extends Fragment{
                     progress = 10;
                 }
 
-                unitEspressoTextView.setText(Integer.toString(progress)+ " " + getString(R.string.shot));
+                espressoString = Integer.toString(progress);
+                unitEspressoTextView.setText(espressoString + " " + getString(R.string.shot));
 
             }
 
@@ -152,11 +190,20 @@ public class MochaFragment extends Fragment{
     //@SuppressLint("NewApi")
     private void cocoSeekbar() {
         //cocoSeekBar.setMin(1);
-        cocoSeekBar.setMax(5);
+        cocoSeekBar.setMax(10);
         cocoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                unitCocoTextView.setText(Integer.toString(progress)+ " " + getString(R.string.teaspoons));
+
+                double progressAdouble = (double) progress;
+                double cocoAdouble = progressAdouble / 10.0;
+
+                if (cocoAdouble < 0.5) {
+                    cocoAdouble = 0.5;
+                }
+
+                cocoString = Double.toString(cocoAdouble);
+                unitCocoTextView.setText(cocoString + " " + getString(R.string.teaspoons));
 
             }
 
@@ -171,7 +218,6 @@ public class MochaFragment extends Fragment{
             }
         });
     }
-
 
 
     private void coldDefaule() {
@@ -189,6 +235,9 @@ public class MochaFragment extends Fragment{
             public void onClick(View v) {
                 milkLinearLayout.setVisibility(View.INVISIBLE);
                 frappePowderLinearLayout.setVisibility(View.INVISIBLE);
+                typeCoffeeString = "Hot Drink";
+                milkString = "0";
+                frappeString = "0";
             }
         });
     }
@@ -200,6 +249,7 @@ public class MochaFragment extends Fragment{
                 //for divisble View
                 milkLinearLayout.setVisibility(View.VISIBLE);
                 frappePowderLinearLayout.setVisibility(View.VISIBLE);
+                typeCoffeeString = "Clod Drink";
             }
         });
     }
@@ -210,6 +260,7 @@ public class MochaFragment extends Fragment{
             public void onClick(View v) {
                 milkLinearLayout.setVisibility(View.VISIBLE);
                 frappePowderLinearLayout.setVisibility(View.VISIBLE);
+                typeCoffeeString = "Frappuccino";
             }
         });
     }
@@ -234,7 +285,7 @@ public class MochaFragment extends Fragment{
 
     private void getValueFromArument() {
         loginString = getArguments().getStringArray("Login");
-        for (int i=0; i<loginString.length; i+=1){
+        for (int i = 0; i < loginString.length; i += 1) {
             Log.d("6DecV1", "LoinString[" + i + "] ==>" + loginString[i]);
         }
     }

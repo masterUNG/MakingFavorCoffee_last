@@ -28,7 +28,7 @@
     <string name="frappe_powder">Frappe powder</string>
 
     <string name="shot">g</string>
-    <string name="teaspoons">Teaspoons</string>
-    <string name="oz">Oz.</string>
+    <string name="teaspoons">g</string>
+    <string name="oz">g</string>
 
 </resources>

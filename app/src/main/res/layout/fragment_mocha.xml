@@ -287,12 +287,12 @@
 
     <!--Food Bar-->
     <Button
-        android:id="@+id/btnoder"
+        android:id="@+id/btnOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:text="Oder"
+        android:text="Order"
         android:textColor="#ffffff" />
 
 
